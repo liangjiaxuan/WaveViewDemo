@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.yxf.waveviewdemo.widget.WaveView
+            android:id="@+id/waveview"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <com.yxf.waveviewdemo.widget.WaveView2
+            android:id="@+id/waveView2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"
+            android:layout_below="@+id/waveView2"
+            android:onClick="@{onClick::onClick}"
+            android:layout_marginTop="20dp"
+            />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="stop"
+            android:onClick="@{onClick::onClick}"
+            android:layout_below="@+id/btn_start"
+            />
+
+    </RelativeLayout>
+</layout>
