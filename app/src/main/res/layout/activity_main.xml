@@ -19,16 +19,40 @@
 
         <com.yxf.waveviewdemo.widget.WaveView2
             android:id="@+id/waveView2"
+            android:layout_below="@+id/waveview"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_centerInParent="true" />
+            />
+
+        <com.yxf.waveviewdemo.widget.WaveView3
+            android:id="@+id/waveView3"
+            android:layout_below="@+id/waveView2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
+
+        <com.yxf.waveviewdemo.widget.CustomView
+            android:id="@+id/customview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"
+            android:layout_above="@+id/btn_start"
+            android:onClick="@{onClick::onClick}"
+            android:layout_marginTop="20dp"
+            />
 
         <Button
             android:id="@+id/btn_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="start"
-            android:layout_below="@+id/waveView2"
+            android:layout_above="@+id/btn_stop"
             android:onClick="@{onClick::onClick}"
             android:layout_marginTop="20dp"
             />
@@ -39,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="stop"
             android:onClick="@{onClick::onClick}"
-            android:layout_below="@+id/btn_start"
+            android:layout_alignParentBottom="true"
             />
 
     </RelativeLayout>
