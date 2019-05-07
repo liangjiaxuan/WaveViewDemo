@@ -25,13 +25,19 @@ public class ScreenUtil {
      * dialog 获取宽高
      */
     public static void getScreenFromDialog(Dialog dialog){
-        Window window = dialog.getWindow();
+        Window window = dialog.getWindow();//获取dialog的window
         WindowManager windowManager = window.getWindowManager();
         Display defaultDisplay = windowManager.getDefaultDisplay();
         Point point=new Point();
         defaultDisplay.getSize(point);
         int width = point.x;
         int height = point.y;
+
+        WindowManager.LayoutParams attributes = window.getAttributes();//dialog的window的属性
+        attributes.dimAmount=0.3f;//设置变暗
+        window.setAttributes(attributes);
+
+
     }
 
 }
